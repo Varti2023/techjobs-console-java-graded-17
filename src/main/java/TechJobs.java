@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -121,16 +118,17 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
         if(someJobs.size() == 0){
-            System.out.println("No records found!");
+            System.out.println("No Results");
         }else{
-            for(int i=0; i<someJobs.size(); i++){
-                System.out.println("*****");
-                for(Map.Entry<String, String> entry : someJobs.get(i).entrySet()){
-                    String key = entry.getKey();
-                    String value =  entry.getValue();
-                    System.out.println(key +": "+value);
+          //  for(int i=0; i<someJobs.size(); i++){
+                for(HashMap jobs : someJobs){
+                System.out.println("\n*****");
+
+                    for(Object keys : jobs.keySet()){
+
+                    System.out.println(keys +": "+jobs.get(keys));
                 }
-                System.out.println("*****\n");
+                System.out.println("*****");
             }
         }
     }

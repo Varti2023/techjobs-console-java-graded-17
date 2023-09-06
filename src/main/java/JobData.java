@@ -95,22 +95,20 @@ public class JobData {
             //Iterating through arraylist
             for(HashMap<String, String> keyMap :  allJobs){
                 //Iterating through hashmap.
-
-                for (Map.Entry<String, String> valueMap : keyMap.entrySet()) {
-
-                    if(valueMap.getValue().toLowerCase().contains(value)){
-
+                 for (Map.Entry<String, String> valueMap : keyMap.entrySet()) {
+                    //checking for the value match
+                     if(valueMap.getValue().toLowerCase().contains(value.toLowerCase())){
                         if(jobByValue.contains(keyMap))
                         {
-                            continue;
-                        }else{ // else add the rowData to list.
                             jobByValue.add(keyMap);
-                        }
-                    }
+                            break;
+                        } // else add the data to list.
+
+                   }
                 }
 
             }
-            //Iterating HashMap for each row of data.
+
 
         return jobByValue;
     }
